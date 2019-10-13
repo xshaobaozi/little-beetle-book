@@ -1,27 +1,28 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import {
-    BrowserRouter as Router,
+    BrowserRouter,
     Switch,
-    Route
+    Route,
+    Link
 } from 'react-router-dom';
 import routes from './router';
 import Head from './layout/head';
 export default function App() {
     return (
         <div className="app">
-            <div className="app-head">
-                <Head></Head>
-            </div>
-            <div className="app-content">
-                <Router>
+            <BrowserRouter>
+                <div className="app-head">
+                    <Head></Head>
+                </div>
+                <div className="app-content">
                     <Switch>
                         {routes.map((route, i) => (
                             <RouteWithSubRoutes key={i} {...route} />
                         ))}
                     </Switch>
-                </Router>
-            </div>
+                </div>
+            </BrowserRouter>
         </div>
     )
 }
