@@ -1,5 +1,5 @@
-const { app, BrowserWindow } = require('electron')
-
+const { app, BrowserWindow, ipcMain } = require('electron')
+const path = require('path');
 // 保持对window对象的全局引用，如果不这么做的话，当JavaScript对象被
 // 垃圾回收的时候，window对象将会自动的关闭
 let win
@@ -10,7 +10,8 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      preload: path.join(__dirname, './public/render.js')
     }
   })
 
@@ -54,3 +55,9 @@ app.on('activate', () => {
 
 // 在这个文件中，你可以续写应用剩下主进程代码。
 // 也可以拆分成几个文件，然后用 require 导入。
+
+ipcMain.on('handle-async-test-1', (evevt, arg) => {
+  console.log(evevt, arg);
+  console.log(111);
+  evevt.reply('handle-async-test-2', 'ok');
+})
