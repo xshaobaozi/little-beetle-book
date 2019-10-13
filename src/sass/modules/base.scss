@@ -1,0 +1,24 @@
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+//谷歌下的移除
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+html, body{
+	padding: 0;
+	margin: 0;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+
+
+$_main_color: rgb(192, 16, 10);
+$_main-font: #fff;
+$_main-size: 16px;
+$_big-size: 18px;

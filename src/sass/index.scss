@@ -1,0 +1,12 @@
+@import './modules/base.scss';
+@import './modules/mixin.scss';
+
+.touch-icon{
+    cursor: pointer;
+}
+.base-title__desc{
+    padding: 10px 30px;
+    // font-size: $_main-size;
+    font-size: $_big-size;
+    font-weight: 700;
+}

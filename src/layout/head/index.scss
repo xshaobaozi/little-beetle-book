@@ -1,0 +1,27 @@
+@import 'src/sass/index.scss';
+
+.head-app{
+    background-color: $_main_color;
+    height: 100%;
+    @include flex_center(flex-start);
+    padding: 0 30px;
+    color: $_main-font;
+    .head-title{
+        font-size: 18px;
+        margin-right: 100px;
+        color: $_main-font;
+        @extend .touch-icon;
+    }
+    .head-search{
+        button{
+            background-color: #c0c4c7;
+            border: none;
+        }
+        input:focus{
+            border: none;
+        }
+    }
+    .ant-input-affix-wrapper .ant-input:not(:last-child){
+        padding-right: 0;
+    }
+}
